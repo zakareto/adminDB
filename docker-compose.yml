@@ -7,5 +7,10 @@ services:
             - "3806:3306"
         environment: 
             - MYSQL_ROOT_PASSWORD=123456
+            - MYSQL_DATABASE=myfirstdb
+            - MYSQL_USER=myfirstuser
+            - MYSQL_PASSWORD=myfirstpassword
         volumes:
             - "./config:/etc/mysql/conf.d" #Local configuration location
+            - "./files:/var/lib/mysql"
+            - "./log:/var/log/mysql"
